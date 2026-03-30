@@ -1,4 +1,4 @@
-```markdown
+
 # 🎙️ Frontend UI: Sunmarke AI Voice Assistant
 
 This repository contains the user interface for the Sunmarke AI Voice Assistant. It is a modern, responsive Next.js web application that leverages browser-native APIs for real-time speech recognition and synthesis, providing a seamless multi-model comparison experience.
@@ -37,14 +37,12 @@ The frontend is designed as a lightweight, client-side application to handle har
    cd frontend-voice-agent
 Install dependencies:
 
-Bash
 npm install
 Update the Backend URL (If testing locally):
 Open src/app/page.tsx and ensure the fetch request on line 73 points to your active backend (either http://localhost:8000/api/ask for local testing or your live Railway URL).
 
 Start the development server:
 
-Bash
 npm run dev
 Open http://localhost:3000 in your browser.
 
