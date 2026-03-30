@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+```markdown
+# 🎙️ Frontend UI: Sunmarke AI Voice Assistant
 
-## Getting Started
+This repository contains the user interface for the Sunmarke AI Voice Assistant. It is a modern, responsive Next.js web application that leverages browser-native APIs for real-time speech recognition and synthesis, providing a seamless multi-model comparison experience.
 
-First, run the development server:
+## 🚀 Live Deployment
+* **Live Application:** `[INSERT_YOUR_RAILWAY_OR_VERCEL_FRONTEND_URL]`
+* **Backend API Referenced:** `[INSERT_YOUR_RAILWAY_BACKEND_URL]/api/ask`
 
-```bash
+## 💻 Tech Stack
+* **Framework:** Next.js 14 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Icons:** Lucide React
+* **Speech-to-Text:** Web Speech API (`SpeechRecognition`)
+* **Text-to-Speech:** Web Speech API (`SpeechSynthesis`)
+* **Deployment:** Railway / Vercel
+
+## 🏗️ Architecture Design
+
+The frontend is designed as a lightweight, client-side application to handle hardware interactions (microphone) and UI rendering:
+1. **Audio Capture:** Utilizes the browser's native `SpeechRecognition` interface to capture user voice input in real-time without requiring external API calls or file uploads.
+2. **API Communication:** Sends the transcribed text payload to the external FastAPI backend via a standard REST `POST` request.
+3. **Comparative UI:** Implements a fully responsive, 3-column CSS Grid layout to display the responses from Gemini, DeepSeek, and Kimi side-by-side for easy evaluation.
+4. **Audio Playback:** Uses the native `SpeechSynthesisUtterance` interface to read the generated LLM responses aloud, dynamically mapping to the specific column the user interacts with.
+
+## 🛠️ Local Setup Instructions
+
+### Prerequisites
+* Node.js (v18 or higher)
+* A modern web browser with Web Speech API support (**Google Chrome** or **Microsoft Edge** highly recommended).
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/smuzairai025-eng/voice-enabled-assistant-frontend.git
+   cd frontend-voice-agent
+Install dependencies:
+
+Bash
+npm install
+Update the Backend URL (If testing locally):
+Open src/app/page.tsx and ensure the fetch request on line 73 points to your active backend (either http://localhost:8000/api/ask for local testing or your live Railway URL).
+
+Start the development server:
+
+Bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Usage Notes
+Ensure you grant microphone permissions when prompted by the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For the Speech-to-Text feature to function properly, the application must be accessed via localhost or a secure https:// domain due to browser security restrictions.
