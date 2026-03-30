@@ -4,8 +4,8 @@
 This repository contains the user interface for the Sunmarke AI Voice Assistant. It is a modern, responsive Next.js web application that leverages browser-native APIs for real-time speech recognition and synthesis, providing a seamless multi-model comparison experience.
 
 ## 🚀 Live Deployment
-* **Live Application:** `[INSERT_YOUR_RAILWAY_OR_VERCEL_FRONTEND_URL]`
-* **Backend API Referenced:** `[INSERT_YOUR_RAILWAY_BACKEND_URL]/api/ask`
+* **Live Application:** `https://voice-enabled-multimodel-assistant-production-7a44.up.railway.app/`
+* **Backend API Referenced:** `voice-enabled-multimodel-assistant-production.up.railway.app`
 
 ## 💻 Tech Stack
 * **Framework:** Next.js 14 (App Router)
